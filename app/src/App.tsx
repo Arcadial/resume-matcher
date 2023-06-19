@@ -77,6 +77,19 @@ const App: React.FC = () => {
         return truncatedWords.join(' ');
     };
 
+    // Set compatibility score color
+    const getCompatibilityScoreColor = (score: number) => {
+        if (score > 85) {
+          return 'darkgreen';
+        } else if (score > 75 && score < 85) {
+          return 'green';
+        } else if (score > 65 && score < 75) {
+          return 'orange';
+        } else {
+          return 'red';
+        }
+    };
+
     return (
         <div className="app-container">
             <h1 className="app-title">Job Matcher App</h1>
@@ -138,27 +151,22 @@ const App: React.FC = () => {
                 <div className="search-results-container">
                     <h2 className="search-results-title">Search Results</h2>
                     {searchResults.map((result, index) => (
-                        <div key={index} className="job-card">
-                            <h3 className="job-title">{result.title}</h3>
-                            <p className="job-info">
-                                Company: {result.company}
-                            </p>
-                            <p className="job-info">
-                                Description:{' '}
-                                {truncateDescription(result.description)}
-                                {result.description.length > 25 ? '...' : ''}
-                            </p>
-                            <p className="job-info job-link">
-                                Link:{' '}
-                                <a href={result.job_link}>{result.job_link}</a>
-                            </p>
-                            <p className="job-info job-compatibility">
-                                Compatibility:{' '}
-                                <span className="compatibility-score">
-                                    {Math.round(result.scores)}%
-                                </span>
-                            </p>
-                        </div>
+                        <a href={result.joblink}>
+                            <div key={index} className="job-card">
+                                <h3 className="job-title">{result.title}</h3>
+                                <p className="job-info">
+                                    Company: {result.company}
+                                </p>
+                                <p className="job-info">
+                                    Description:{' '}
+                                    {truncateDescription(result.description)}
+                                    {result.description.length > 25 ? '...' : ''}
+                                </p>
+                                <p className="job-info job-compatibility">Compatibility:{' '}
+                                    <span className="compatibility-score" style={{ color: getCompatibilityScoreColor(result.scores) }}> {Math.round(result.scores)}%</span>
+                                </p>
+                            </div>
+                        </a>
                     ))}
                 </div>
             )}
