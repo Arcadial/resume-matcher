@@ -1,5 +1,7 @@
 # Resume Matcher
 
+This program is fully dockerized with docker-compose.
+
 ### To run
 `docker-compose up --build (might take a while)`
 ```
