@@ -1,0 +1,31 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.joblink {
+  max-width: 600px; /* Set the maximum width for the link container */
+  overflow: hidden; /* Hide the overflow content */
+  text-overflow: ellipsis; /* Show an ellipsis (...) for truncated text */
+  white-space: nowrap; /* Prevent line breaks in the link container */
+}
+
+.joblink a {
+  color: blue;
+}
+
+

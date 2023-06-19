@@ -1,0 +1,5 @@
+linkedin-jobs-scraper
+pymongo
+pandas
+nltk
+scikit-learn
