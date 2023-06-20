@@ -79,11 +79,11 @@ const App: React.FC = () => {
 
     // Set compatibility score color
     const getCompatibilityScoreColor = (score: number) => {
-        if (score > 85) {
+        if (score >= 85) {
             return 'darkgreen';
-        } else if (score > 70 && score < 85) {
+        } else if (score >= 70 && score < 85) {
             return 'green';
-        } else if (score > 60 && score < 70) {
+        } else if (score >= 60 && score < 70) {
             return 'orange';
         } else {
             return 'red';
