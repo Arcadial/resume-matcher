@@ -15,7 +15,7 @@ DEF_UPLOAD = "uploads/"
 app.config["UPLOAD_FOLDER"] = DEF_UPLOAD
 
 # Connect to MongoDB
-client = pymongo.MongoClient("mongodb://mongodb:27017/")
+client = pymongo.MongoClient("mongodb-service")
 db = client["jobs_database"]
 collection = db["jobs_collection"]
 

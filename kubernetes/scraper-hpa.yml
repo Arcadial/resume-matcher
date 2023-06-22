@@ -1,0 +1,11 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: scraper-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Job
+    name: scraper-job
+  minReplicas: 1
+  maxReplicas: 10

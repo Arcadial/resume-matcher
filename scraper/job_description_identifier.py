@@ -14,7 +14,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 import pymongo
 
 # Connect to MongoDB
-client = pymongo.MongoClient("mongodb://mongodb:27017/")
+client = pymongo.MongoClient("mongodb-service")
 db = client["jobs_database"]
 collection = db["jobs_collection"]
 

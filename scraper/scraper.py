@@ -10,10 +10,9 @@ import pymongo
 jobs = []
 
 # Connect to MongoDB
-client = pymongo.MongoClient("mongodb://mongodb:27017/")
+client = pymongo.MongoClient("mongodb-service")
 db = client["jobs_database"]
 collection = db["jobs_collection"]
-collection.delete_many({})
 
 
 # Change root logger level (default is WARN)
@@ -62,8 +61,9 @@ def on_end():
 
 
 def save_jobs():
+    collection.delete_many({})
     collection.insert_many(jobs)
-    print("[SAVE_JOBS]")
+    print("[SAVE_JOBS]", jobs)
 
 
 scraper = LinkedinScraper(
@@ -86,7 +86,7 @@ queries = [
         options=QueryOptions(
             locations=["Singapore"],
             skip_promoted_jobs=True,
-            limit=5,
+            limit=25, # Change this to the number of jobs to scrape
             filters=QueryFilters(relevance=RelevanceFilters.RECENT),
         ),
     ),

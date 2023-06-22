@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: scraper-job
+spec:
+  completions: 1
+  template:
+    metadata:
+      labels:
+        app: scraper
+    spec:
+      containers:
+        - name: scraper
+          image: arcadial/resume-matcher-scraper:k8s
+      restartPolicy: OnFailure
+  backoffLimit: 4

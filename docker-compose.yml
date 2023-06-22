@@ -9,6 +9,7 @@ services:
       - '3000:3000'
     depends_on:
       - server
+    image: arcadial/app:latest
   
   server:
     build:
@@ -18,6 +19,7 @@ services:
       - '5000:5000'
     depends_on:
       - mongodb
+    image: arcadial/server:latest
 
   scraper:
     build:
@@ -25,6 +27,7 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - mongodb
+    image: arcadial/scraper:latest
 
   mongodb:
     image: mongo
