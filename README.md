@@ -1,6 +1,8 @@
 # Resume Matcher
 
-This program matches uploaded resumes to jobs from LinkedIn through keyword matching and provides a compatibility percentage. Fully dockerized with docker-compose.
+This program matches uploaded resumes to jobs from LinkedIn through keyword matching and provides a compatibility percentage. Fully dockerized with docker-compose and deployed to kubernetes.
+
+### To run in kubernetes, change to k8s branch.
 
 ### To run
 `docker-compose up --build`\
