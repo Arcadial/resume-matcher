@@ -3,23 +3,22 @@
 This program matches uploaded resumes to jobs from LinkedIn through keyword matching and provides a compatibility percentage. Fully dockerized with docker-compose.
 
 ### To run
-`docker-compose up --build`\
+`python apply.py`\
 (might take a while)
 
 1. Allow the scraper to run completely
-2. Navigate to http://localhost:3000/
+2. Navigate to http://localhost:80/
 3. Upload a resume (only available in PDF and DOCX format)
 
 
 ### To stop
 
-Ctrl+C\
-`docker-compose down`
+`python delete.py`
 
 
 ### Dependencies
 
-1. Docker Desktop
+1. Docker Desktop **with kubernetes enabled**
 2. MongoDB Compass (if you want to view the scraped jobs w/ their keywords)
 
 
